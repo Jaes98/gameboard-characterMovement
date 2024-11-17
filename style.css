@@ -1,0 +1,31 @@
+#gameboard {
+  background-color: #b2cf21;
+  width: 400px;
+  height: 400px;
+  border: 2px rgb(44, 179, 220) solid;
+}
+
+#player {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url("./images/Character\ 10.png");
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+  position: absolute;
+}
+
+#enemy {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url("./images/Character\ 8.png");
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+  position: absolute;
+}
+
+
+/* .collision {
+  color: red;
+  text-align: center;
+  font-size: xx-large;
+} */
