@@ -1,4 +1,12 @@
-#gameboard {
+body {
+  background-color: azure;
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  margin: 0;
+}
+
+#gameBoard {
   background-color: #b2cf21;
   width: 400px;
   height: 400px;

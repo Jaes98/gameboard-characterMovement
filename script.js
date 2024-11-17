@@ -31,6 +31,9 @@ const gameBoard = {
     bottom: 400,
 };
 
+const playerElement = document.getElementById('player');
+const gameBoardElement = document.getElementById('gameBoard');
+
 function start() {
     console.log('js running');
 
@@ -41,7 +44,37 @@ function start() {
     requestAnimationFrame(tick);
 };
 
-function tick() {
+
+
+let prevTime = 0;
+function tick(time) {
+  requestAnimationFrame(tick);
+
+  const deltaTime = time - prevTime;
+  prevTime = time;
+
+//   movePlayer(deltaTime);
+//   moveEnemy(deltaTime);
+  displayPlayer();
+}
+
+
+
+
+// function displayPlayer() {
+//   if (controls.up || controls.down || controls.left || controls.right) {
+//     playerElement.style.translate = `${playerInfo.x}px ${playerInfo.y}px`;
+//   }
+//   playerElement.style.backgroundPosition = `${animationStuff.walkDir * 100}% ${
+//     animationStuff.characterDirection * 100
+//   }%`;
+// }
+
+function displayPlayer() {
+    player.y = 40;
+    player.x = 40;
+
+    playerElement.style.transform = `translate(${player.x}px, ${player.y}px)`;
 }
 
 function keyPressed(event) {
