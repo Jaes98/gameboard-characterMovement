@@ -13,6 +13,10 @@ const player = {
   width: 32,
   height: 40,
   speed: 100,
+  reg: {
+    x: 8,
+    y: 12
+  }
 };
 
 const gameBoard = {
@@ -109,7 +113,6 @@ function displayTiles() {
       const tileIndex = row * GRID_WIDTH + col;
       const visualTile = tileElements[tileIndex];
       const tileType = getTileAtCoord(col, row);
-      console.log("Tile type:", tileType);
       const className = getClassForTileType(tileType);
       visualTile.className = "tile";
       if (className) {
@@ -211,6 +214,36 @@ function tick(time) {
   const deltaTime = (time - prevTime) / 1000;
   prevTime = time;
 
+  getTileCoordUnderPlayer(player);
   displayPlayer();
   movePlayer(deltaTime);
+}
+
+function getTileCoordUnderPlayer(player) {
+  console.log("Player position:", player.x, player.y);
+  return coordFromPos(player.x, player.y)
+}
+
+
+let lastHighlight = null;
+function debugShowTileUnderPlayer() {
+  const coord = getTileCoordUnderPlayer(player);
+  const visualTile = getVisualTileFromCoords(coord);
+
+  visualTile.classList.add("highlight");
+
+  if(lastHighlight && lastHighlight != visualTile) {
+    lastHighlight.classList.remove("highlight");
+  }
+
+
+}
+
+function getVisualTileFromCoords({row, col}) {
+  const visualTiles = document.querySelectorAll(".tile");
+
+
+  const index = row * GRID_WIDTH + col;
+  const visualTile = visualTiles[index];
+  return visualTile;
 }
