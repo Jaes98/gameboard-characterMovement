@@ -80,7 +80,7 @@ function movePlayer(deltaTime) {
   }
 }
 
-function moveEnemy(deltaTime) {
+function moveEnemy() {
   enemy.x += enemy.speed * enemy.direction;
 
   if (enemy.x <= gameBoard.left || enemy.x + enemy.width >= gameBoard.right) {
