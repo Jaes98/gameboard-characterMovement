@@ -8,7 +8,7 @@ const controls = {
 };
 
 const player = {
-  x: 0,
+  x: 180,
   y: 0,
   width: 32,
   height: 40,

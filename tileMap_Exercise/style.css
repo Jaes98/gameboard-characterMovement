@@ -1,0 +1,65 @@
+body {
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#background {
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    grid-area: 1 / 1;
+    grid-template-columns: repeat(var(--GRID_WIDTH), max-content);
+}
+
+#player {
+  width: 32px;
+  aspect-ratio: 16/20;
+  background-image: url("./images/character/Character\ 1.png");
+  background-size: 400% 400%;
+  image-rendering: pixelated;
+  position: absolute;
+}
+
+.tile {
+    width: calc(var(--TILE_SIZE) * 1px);
+    height: calc(var(--TILE_SIZE) * 1px);
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+
+    background-repeat: no-repeat;
+    background-size: 100%;
+    image-rendering: pixelated;
+}
+
+.tile.water {
+    background-image: url("./images/tiles/water.png");
+}
+
+.tile.flower {
+    background-image: url("./images/tiles/flowers.png");
+}
+
+.tile.wall {
+    background-image: url("./images/tiles/wall.png");
+}
+
+.tile.path {
+    background-image: url("./images/tiles/path.png");
+}
+
+.tile.grass {
+    background-image: url("./images/tiles/grass.png");
+}
+
+.tile.floorplanks {
+    background-image: url("./images/tiles/floor_planks.png");
+}
+
+.tile.tree {
+    background-image: url("./images/tiles/tree.png");
+}
+
+.tile.door {
+    background-image: url("./images/tiles/door.png");
+}
