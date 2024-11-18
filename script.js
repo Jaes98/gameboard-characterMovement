@@ -12,7 +12,7 @@ const player = {
   y: 0,
   width: 32,
   height: 40,
-  speed: 70,
+  speed: 100,
 };
 
 const enemy = {
